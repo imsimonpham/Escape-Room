@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
@@ -15,6 +13,18 @@ public class FrameLock : MonoBehaviour
     private void Start()
     {
         _interactors = GetComponentsInChildren<XRSocketInteractor>();
+        if (_interactors == null)
+        {
+            Debug.LogError("Socket Interactor is null");
+        }
+    }
+
+    void Update()
+    {
+        if (CheckCode())
+        {
+            //Debug.Log("Correct Order");
+        }
     }
 
     public void EnterSocket0()
@@ -25,7 +35,9 @@ public class FrameLock : MonoBehaviour
         {
             _enteredCode[0] = id.GetID();
             if (CheckCode())
+            {
                 _onCheck.Invoke();
+            }
         }
     }
 
@@ -37,7 +49,9 @@ public class FrameLock : MonoBehaviour
         {
             _enteredCode[1] = id.GetID();
             if (CheckCode())
+            {
                 _onCheck.Invoke();
+            }
         }
     }
 
@@ -49,7 +63,9 @@ public class FrameLock : MonoBehaviour
         {
             _enteredCode[2] = id.GetID();
             if (CheckCode())
+            {
                 _onCheck.Invoke();
+            }
         }
     }
 
