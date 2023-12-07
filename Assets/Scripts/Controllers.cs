@@ -15,4 +15,6 @@ public class Controllers : MonoBehaviour
       bool currentLeverState = _animator.GetBool("LeverOn");
       _animator.SetBool("LeverOn", !currentLeverState);
    }
+
+   
 }                                                 

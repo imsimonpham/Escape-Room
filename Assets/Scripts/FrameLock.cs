@@ -9,6 +9,7 @@ public class FrameLock : MonoBehaviour
 
     private XRSocketInteractor[] _interactors;
     [SerializeField] UnityEvent _onCheck;
+    private GameObject _box;
 
     private void Start()
     {
@@ -16,14 +17,6 @@ public class FrameLock : MonoBehaviour
         if (_interactors == null)
         {
             Debug.LogError("Socket Interactor is null");
-        }
-    }
-
-    void Update()
-    {
-        if (CheckCode())
-        {
-            //Debug.Log("Correct Order");
         }
     }
 

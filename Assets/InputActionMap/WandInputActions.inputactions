@@ -1,0 +1,34 @@
+{
+    "name": "WandInputActions",
+    "maps": [
+        {
+            "name": "WandInputActionMap",
+            "id": "3cc75e27-2c5e-45d9-b4ac-cf47a9b2e47a",
+            "actions": [
+                {
+                    "name": "ChangeSpell",
+                    "type": "PassThrough",
+                    "id": "5872975d-caca-4178-92f2-56679db2c1d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d43dacb7-4776-4fe7-ab6c-df4e0e961280",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeSpell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
