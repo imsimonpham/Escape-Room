@@ -17,11 +17,11 @@ MonoBehaviour:
   - Teleport
   - Painting
   - Wand
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grabbable
+  - Unlockable
+  - Revealable
+  - Flamable
+  - Manipulatable
   - 
   - 
   - 

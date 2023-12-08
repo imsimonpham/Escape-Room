@@ -6,9 +6,27 @@
             "id": "3cc75e27-2c5e-45d9-b4ac-cf47a9b2e47a",
             "actions": [
                 {
-                    "name": "ChangeSpell",
-                    "type": "PassThrough",
+                    "name": "Next Spell",
+                    "type": "Button",
                     "id": "5872975d-caca-4178-92f2-56679db2c1d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Previous Spell",
+                    "type": "Button",
+                    "id": "0d4c2c19-7433-41fc-90d4-e3c6096ac624",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Use Spell",
+                    "type": "Button",
+                    "id": "039dadd3-ea32-4ef3-9d98-a8238c826786",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -23,7 +41,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ChangeSpell",
+                    "action": "Next Spell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb3dca88-d1bb-45d7-a653-a464a25dd948",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Previous Spell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5ffa72b-4510-4a21-915a-4ebca651ef25",
+                    "path": "<XRController>{RightHand}/triggerButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use Spell",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
