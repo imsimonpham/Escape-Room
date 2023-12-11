@@ -11,7 +11,7 @@ public class RightHand : MonoBehaviour
    [SerializeField] private GameplayUI _gameplayUI;
    [SerializeField] private SpellManager _spellManager;
    [SerializeField] private InputActionReference _useSpellReference;
-   [SerializeField] private ActionBasedController _xrController;
+   [SerializeField] private Wand _wand;
    private int _currentSpellIndex;
    void Awake()
    {
@@ -37,6 +37,7 @@ public class RightHand : MonoBehaviour
             _xrRayInteractor.enabled = true;
             _gameplayUI.ShowSpellFrame();
             _spellManager.ActivateWand();
+            _wand.SwapToPickedUpMat();
         }
         else
         {
@@ -45,6 +46,7 @@ public class RightHand : MonoBehaviour
             _xrRayInteractor.enabled = false;
             _gameplayUI.HideSpellFrame();
             _spellManager.DeactivateWand();
+            _wand.SwapToDroppedMat();
         }
     }
 
@@ -59,26 +61,5 @@ public class RightHand : MonoBehaviour
         _xrRayInteractor.maxRaycastDistance = spellRange;
     }
 
-    public void UseSpell(InputAction.CallbackContext context)
-    {
-        _currentSpellIndex = _spellManager.GetCurrentSpellIndex();
-       
-        if (_currentSpellIndex == 3)
-        {
-            Alohamora();
-        }  else if (_currentSpellIndex == 4)
-        {
-            Aparecium();
-        }
-    }
-    
-    void Alohamora()
-    {
-        Debug.Log("Alohamora");
-    }
-    
-    void Aparecium()
-    {
-        Debug.Log("Aparecium");
-    }
+    void UseSpell(InputAction.CallbackContext context){}
 }

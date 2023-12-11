@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Lock
+  - Interactable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Container
   - Water
   - UI
   - XROrigin

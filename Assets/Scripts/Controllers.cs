@@ -1,14 +1,17 @@
+using System;
 using UnityEngine;
 using TMPro;
 using System.Collections;
 public class Controllers : MonoBehaviour
 {
    [SerializeField] private Animator _animator;
+   [SerializeField] private MovableWall _wall;
    private float _fadeDuration;
    
-   [Header("Text Components")] 
+   /*[Header("Text Components")] 
    [SerializeField] private TMP_Text _riddle1;
-   [SerializeField] private TMP_Text _riddle2;
+   [SerializeField] private TMP_Text _riddle2;*/
+
    public void ToggleSwitch()
    {
       bool currentSwitchState = _animator.GetBool("SwitchOn");
@@ -21,7 +24,21 @@ public class Controllers : MonoBehaviour
       _animator.SetBool("LeverOn", !currentLeverState);
    }
 
-   public void RevealText(TMP_Text text)
+   public void PullLeverDown()
+   {
+      _animator.SetTrigger("PullLever1");
+      _wall.SetMovableWallTrigger();
+   }
+   
+
+   public void OpenCoffin()
+   {
+      _animator.SetTrigger("OpenCoffin");
+   }
+
+
+
+   /*public void RevealText(TMP_Text text)
    {
       StartCoroutine(FadeInText(text));
    }
@@ -48,5 +65,5 @@ public class Controllers : MonoBehaviour
 
       // Ensure the final alpha is exactly 1
       canvasGroup.alpha = 1f;
-   }
+   }*/
 }                                                 
