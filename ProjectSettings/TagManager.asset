@@ -6,6 +6,16 @@ TagManager:
   tags:
   - Lock
   - Interactable
+  - WallVisualHint
+  - LionStatueLight
+  - LionStatueFloor
+  - MovableWall1
+  - MovableWall2
+  - LionStatue
+  - Crown
+  - Skull
+  - Crystal
+  - Compass
   layers:
   - Default
   - TransparentFX
