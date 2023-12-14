@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LionStatueFloor : MonoBehaviour
 {
-    [SerializeField] private Camera _mainCam;
+    [SerializeField] private Camera _povCam;
     private Vector3 _boxCenter;
     [SerializeField] private Vector3 _boxSize;
     [SerializeField] private Controllers _lionStatue;
@@ -11,7 +11,6 @@ public class LionStatueFloor : MonoBehaviour
 
     private void Start()
     {
-        _boxCenter = transform.position;
         _floorCollider = GetComponent<BoxCollider>();
     }
 
@@ -22,14 +21,14 @@ public class LionStatueFloor : MonoBehaviour
             _floorCollider.enabled = true;
         } else
         {
-            ScanForMainCam();
+            ScanForPOVCam();
         }
     }
 
-    void ScanForMainCam()
+    void ScanForPOVCam()
     {
         Bounds boxBounds = new Bounds(_boxCenter, _boxSize);
-        bool isMainCamInBox = boxBounds.Contains(_mainCam.transform.position);
+        bool isMainCamInBox = boxBounds.Contains(_povCam.transform.position);
 
         if (isMainCamInBox)
         {
@@ -39,11 +38,5 @@ public class LionStatueFloor : MonoBehaviour
         {
             _floorCollider.enabled = false;
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(_boxCenter, _boxSize);
     }
 }
