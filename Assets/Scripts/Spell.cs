@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Spell : MonoBehaviour
@@ -6,6 +7,8 @@ public class Spell : MonoBehaviour
     [SerializeField] private int _spellIndex;
     [SerializeField] private float _spellRange;
     [SerializeField] private string _interactionLayerMask;
+    [SerializeField] private string _spellUse;
+    [SerializeField] private AudioClip _spellSound;
 
     public string GetSpellName()
     {
@@ -25,5 +28,15 @@ public class Spell : MonoBehaviour
     public string GetSpellInteractionLayerMask()
     {
         return _interactionLayerMask;
+    }
+
+    public string GetSpellUse()
+    {
+        return _spellUse;
+    }
+
+    public AudioClip GetSpellSound()
+    {
+        return _spellSound;
     }
 }

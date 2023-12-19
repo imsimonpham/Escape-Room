@@ -12,6 +12,7 @@ public class LionStatueFloor : MonoBehaviour
     private void Start()
     {
         _floorCollider = GetComponent<BoxCollider>();
+        _boxCenter = transform.position;
     }
 
     void Update()
@@ -38,5 +39,11 @@ public class LionStatueFloor : MonoBehaviour
         {
             _floorCollider.enabled = false;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(_boxCenter, _boxSize);
     }
 }

@@ -8,11 +8,14 @@ public class RightHand : MonoBehaviour
    [SerializeField] private Animator _animator;
    [SerializeField] private XRInteractorLineVisual _lineVisual;
    [SerializeField] private XRRayInteractor _xrRayInteractor;
-   [SerializeField] private GameplayUI _gameplayUI;
+   [SerializeField] private SpellNameUI _spellNameUI;
+   [SerializeField] private SpellDetailsUI _spellDetailsUI;
    [SerializeField] private SpellManager _spellManager;
    [SerializeField] private InputActionReference _useSpellReference;
    [SerializeField] private Wand _wand;
-   private int _currentSpellIndex;
+   [SerializeField] private AudioSource _audioSource;
+   private Spell _currentSpell;
+     
    void Awake()
    {
        _useSpellReference.action.started += UseSpell;
@@ -24,6 +27,8 @@ public class RightHand : MonoBehaviour
         {
             CheckForWand();
         }
+
+        _currentSpell = _spellManager.GetCurrentSpell();
     }
 
     public void CheckForWand()
@@ -35,7 +40,8 @@ public class RightHand : MonoBehaviour
             _animator.SetBool("HoldingWand", true);
             _lineVisual.enabled = true;
             _xrRayInteractor.enabled = true;
-            _gameplayUI.ShowSpellFrame();
+            _spellNameUI.ShowSpellFrame();
+            _spellDetailsUI.ToggleBg();
             _spellManager.ActivateWand();
             _wand.SwapToPickedUpMat();
         }
@@ -44,7 +50,8 @@ public class RightHand : MonoBehaviour
             _animator.SetBool("HoldingWand", false);
             _lineVisual.enabled = false;
             _xrRayInteractor.enabled = false;
-            _gameplayUI.HideSpellFrame();
+            _spellNameUI.HideSpellFrame();
+            _spellDetailsUI.ToggleBg();
             _spellManager.DeactivateWand();
             _wand.SwapToDroppedMat();
         }
@@ -61,5 +68,12 @@ public class RightHand : MonoBehaviour
         _xrRayInteractor.maxRaycastDistance = spellRange;
     }
 
-    void UseSpell(InputAction.CallbackContext context){}
+    void UseSpell(InputAction.CallbackContext context){
+        PlaySpellSound();
+    }
+
+    public void PlaySpellSound()
+    {
+        _audioSource.PlayOneShot(_currentSpell.GetSpellSound());
+    }
 }

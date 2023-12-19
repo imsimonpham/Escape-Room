@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Pot : MonoBehaviour
@@ -10,7 +9,9 @@ public class Pot : MonoBehaviour
 
     [SerializeField] private GameObject _liquid;
     [SerializeField] private GameObject _compass;
-    
+    [SerializeField] private GameObject _smoke;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _forgeSound;
 
     private BoxCollider _potCollider;
 
@@ -25,7 +26,8 @@ public class Pot : MonoBehaviour
 
         if (areItemsInPot)
         {
-            ForgeCompass();
+            StartCoroutine(ShowSmokeCoroutine());
+            StartCoroutine(ForgeCompassRoutine());
         }
     }
 
@@ -39,8 +41,22 @@ public class Pot : MonoBehaviour
         bool isCrystalInPot = potBounds.Contains(_crystal.transform.position);
         bool isCrownInPot = potBounds.Contains(_crown.transform.position);
 
-        // Return true if all three items are inside the pot
         return isSkullInPot && isCrystalInPot && isCrownInPot;
+    }
+
+   
+    IEnumerator ShowSmokeCoroutine()
+    {
+        _smoke.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        _smoke.SetActive(false);
+    }
+
+  
+    IEnumerator ForgeCompassRoutine()
+    {
+        yield return new WaitForSeconds(3f);
+        ForgeCompass();
     }
 
     private void ForgeCompass()
@@ -49,6 +65,7 @@ public class Pot : MonoBehaviour
         _crystal.SetActive(false);
         _crown.SetActive(false);
         _liquid.SetActive(false);
+        _audioSource.PlayOneShot(_forgeSound);
         _compass.SetActive(true);
     }
 }

@@ -15,10 +15,9 @@ public class Controllers : MonoBehaviour
    private BoxCollider _lionStatueFloorCollider;
    private Animator _lionStatueAnim;
 
-
-    /*[Header("Text Components")] 
-    [SerializeField] private TMP_Text _riddle1;
-    [SerializeField] private TMP_Text _riddle2;*/
+   [Header("Optional")]
+   [SerializeField] private AudioSource _audioSource;
+   [SerializeField] private AudioClip _audioClip;
 
     private void Start()
     {
@@ -90,6 +89,11 @@ public class Controllers : MonoBehaviour
         _animator.SetTrigger("OpenDoor");
     }
 
+    public void ShowGameOver()
+    {
+        Debug.Log("Game is over");
+    }
+
     //Lion Statue
     IEnumerator LionStatueRise()
     {
@@ -115,34 +119,8 @@ public class Controllers : MonoBehaviour
         _animator.SetTrigger("GargoyleTurn");
     }
 
-
-
-    /*public void RevealText(TMP_Text text)
+    public void PlaySound()
     {
-       StartCoroutine(FadeInText(text));
+        _audioSource.PlayOneShot(_audioClip);
     }
-
-    IEnumerator FadeInText(TMP_Text text)
-    {
-       CanvasGroup canvasGroup = text.GetComponent<CanvasGroup>();
-
-       if (canvasGroup == null)
-       {
-          // If CanvasGroup component is not present, add it
-          canvasGroup = text.gameObject.AddComponent<CanvasGroup>();
-       }
-
-       // Ensure the alpha is initially set to 0
-       canvasGroup.alpha = 0f;
-
-       // Gradually increase the alpha to 1 over time
-       while (canvasGroup.alpha < 1f)
-       {
-          canvasGroup.alpha += Time.deltaTime / _fadeDuration;
-          yield return null;
-       }
-
-       // Ensure the final alpha is exactly 1
-       canvasGroup.alpha = 1f;
-    }*/
 }                                                 

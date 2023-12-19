@@ -6,6 +6,7 @@ public class MovableWall : MonoBehaviour
    [SerializeField] private Animator _anim;
    [SerializeField] private bool _open;
    [SerializeField] private int _wallIndex;
+   [SerializeField] private AudioSource _audioSource;
 
    private void Start()
    {
@@ -38,5 +39,10 @@ public class MovableWall : MonoBehaviour
     public void Test()
     {
         Debug.Log("Looking");
+    }
+
+    public void PlayStonePushSound()
+    {
+        _audioSource.Play();
     }
 }

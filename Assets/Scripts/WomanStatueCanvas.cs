@@ -9,23 +9,40 @@ public class WomanStatueCanvas : MonoBehaviour
     [SerializeField] private Image _bg;
     [SerializeField] private TMP_Text _hint1;
     [SerializeField] private TMP_Text _hint2;
+    private bool _nextHint;
+    private bool _previousHint;
 
     private void Start()
     {
-        
+        _nextHint = false;
+        _previousHint = true;
     }
 
-    public void ShowHint1()
+    public void ShowHint()
     {
-        _bg.gameObject.SetActive(true);
-        _hint2.gameObject.SetActive(false);
-        _hint1.gameObject.SetActive(true);
+        if(_nextHint)
+        {
+            _bg.gameObject.SetActive(true);
+            _hint1.gameObject.SetActive(false);
+            _hint2.gameObject.SetActive(true);
+        } else if(_previousHint)
+        {
+            _bg.gameObject.SetActive(true);
+            _hint2.gameObject.SetActive(false);
+            _hint1.gameObject.SetActive(true);
+        }
     }
 
-    public void ShowHint2()
+    public void Next()
     {
-        _hint1.gameObject.SetActive(false);
-        _hint2.gameObject.SetActive(true);
+        _nextHint = true;
+        _previousHint = false;
+    }
+
+    public void Previous()
+    {
+        _previousHint = true;
+        _nextHint = false;
     }
 
     public void HideHints()

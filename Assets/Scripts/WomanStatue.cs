@@ -7,14 +7,15 @@ public class WomanStatue : MonoBehaviour
     [SerializeField] private Camera _povCam;
     [SerializeField] private BoxCollider _boxCollider;
     [SerializeField] private WomanStatueCanvas _canvas;
+     
 
     // Update is called once per frame
     void Update()
     {
         if (CheckForPOVCam())
         {
-            _canvas.ShowHint1();
-            _canvas.Invoke("ShowHint2", 18f);
+            _canvas.ShowHint();
+           
         } else
         {
             _canvas.HideHints();
