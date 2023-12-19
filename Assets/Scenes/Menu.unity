@@ -7458,7 +7458,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1021556701}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -7527,8 +7527,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 286.06696, y: 98.880615, z: 24.08895}
-  m_Center: {x: -7.2489376, y: 0.72912866, z: -11.544497}
+  m_Size: {x: 598.7965, y: 148.71405, z: 24.08895}
+  m_Center: {x: -1.2203453, y: 0.57244295, z: -11.544477}
 --- !u!1001 &220921432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23505,7 +23505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LineWidth: 0.02
   m_OverrideInteractorLineLength: 1
-  m_LineLength: 10
+  m_LineLength: 5
   m_WidthCurve:
     serializedVersion: 2
     m_Curve:
@@ -24781,8 +24781,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 286.06696, y: 98.880615, z: 24.08895}
-  m_Center: {x: -7.2489376, y: 0.72912866, z: -11.544497}
+  m_Size: {x: 598.28595, y: 145.46843, z: 32.596077}
+  m_Center: {x: -0.250205, y: 0.20088254, z: -15.798053}
 --- !u!114 &852951561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37481,7 +37481,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1021556696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07105447e6d01644aae0f8179ced3152, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ba1756115f6ba3489087ce0033f3ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _instructionCanvas: {fileID: 863505592}
@@ -48476,7 +48476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LineWidth: 0.02
   m_OverrideInteractorLineLength: 1
-  m_LineLength: 10
+  m_LineLength: 5
   m_WidthCurve:
     serializedVersion: 2
     m_Curve:
@@ -82502,7 +82502,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1021556701}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -82571,8 +82571,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 286.06696, y: 98.880615, z: 24.08895}
-  m_Center: {x: -7.2489376, y: 0.72912866, z: -11.544497}
+  m_Size: {x: 598.56, y: 148.53499, z: 24.08895}
+  m_Center: {x: 1.9104779, y: 1.6466453, z: -11.5445}
 --- !u!114 &1747596203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95432,7 +95432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 38316438ac66a4744981dfdf9c25860c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 147a2986402cc5c4fac08723b48d41b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
