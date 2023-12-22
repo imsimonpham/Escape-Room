@@ -16,6 +16,10 @@ TagManager:
   - Skull
   - Crystal
   - Compass
+  - Wall
+  - XROrigin
+  - Floor
+  - DebugLight
   layers:
   - Default
   - TransparentFX
